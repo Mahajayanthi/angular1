@@ -1,0 +1,117 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+      <h1 style="text-align: center">canteens</h1><br>
+      <div class="row" [hidden]="!deleteMessage">
+           
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                        <div class="alert alert-info alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong>canteen Data Deleted</strong>
+                        </div>
+                </div>
+                <div class="col-sm-4"></div>
+        </div>           
+    </div>
+
+  
+  <div class="panel-body">
+      <table  class="table table-hover table-sm" datatable [dtOptions]="dtOptions"
+      [dtTrigger]="dtTrigger"  >
+          <thead class="thead-light">
+              <tr>
+                <th>place</th>
+                <th>canteenNo</th>
+                <th>mailId</th>
+                  <th>dateandtime</th>
+                  <th>phoneNo</th>
+                  <th>selectCanteen</th>
+                  
+                  
+              </tr>
+          </thead>
+          <tbody>
+               <tr *ngFor="let canteen of canteens ">
+                 <td>{{canteen.place}}</td>
+                 <td>{{canteen.canteenNo}}</td>
+                  <td>{{canteen.mailId}}</td>
+                  <td>{{canteen.dateandtime}}</td>
+                  <td>{{canteen.phoneNo}}</td>
+                  <td>{{canteen.selectcanteen}}</td>
+                  <td><button (click)="deletecanteen(canteen.canteenNo)" class='btn btn-primary'><i class="fa fa-futboll-0">Delete</i></button>&nbsp;
+                    <button (click)="updatecanteen(canteen.canteenNo)" class='btn btn-info'
+                    data-toggle="modal" data-target="#myModal">Update</button>
+                  </td>
+                </tr> 
+          </tbody><br>
+      </table>
+  </div>
+</div> 
+
+<div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+                <form [formGroup]="canteenupdateform" #updcan (ngSubmit)="updateCan(updcan)">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title" style="text-align: center">Update canteen</h4>
+              
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body" *ngFor="let canteen of canteenlist " ></div>
+                  <input type="hidden" class="form-control"  formControlName="Place" [(ngModel)]="canteen.place">
+                            <div class="form-group">
+                                <label for="name">Place</label>
+                                
+                                <div class="modal-body" *ngFor="let canteen of canteenlist " ></div>
+                                  <input type="hidden" class="form-control"  formControlName="mailId" [(ngModel)]="canteen.canteenNo">
+                                            <div class="form-group">
+                                                <label for="name">CanteenNo</label>
+                                                <div class="modal-body" *ngFor="let canteen of canteenlist " ></div>
+                                                <input type="hidden" class="form-control"  formControlName="mailId" [(ngModel)]="canteen.canteenNo">
+                                                          <div class="form-group">
+                                                              <label for="name">MailId</label>
+
+                                                <div class="modal-body" *ngFor="let canteen of canteenlist " ></div>
+                                                  <input type="hidden" class="form-control"  formControlName="Date" [(ngModel)]="canteen.dateandtime">
+                                                            <div class="form-group">
+                                                                <label for="name">DateandTime</label>
+                                                                
+                                                                <!-- <div class="modal-body" *ngFor="let canteen of canteenlist " ></div>
+                                                             <input type="hidden" class="form-control"  formControlName="Time" [(ngModel)]="canteen.time">
+                                                                            <div class="form-group">
+                                                                                <label for="name">Time</label> -->
+                                                                                <div class="modal-body" *ngFor="let canteen of canteenlist " ></div>
+                                                                                  <input type="hidden" class="form-control"  formControlName="phoneNo" [(ngModel)]="canteen.phoneNo">
+                                                                                            <div class="form-group">
+                                                                                                <label for="name">PhoneNo</label>
+                                                                                                </div>
+                                                                                                                                                                                                <div class="modal-body" *ngFor="let canteen of canteenlist " ></div>
+                                                                                                  <input type="hidden" class="form-control"  formControlName="selectcanteen" [(ngModel)]="canteen.selectcanteen">
+                                                                                                            <div class="form-group">
+                                                                                                                <label for="name">selectCanteen</label>
+                        <select class="form-control" formControlName="selectcanteen" required>                                   
+                                    <option value="Nakshratha" [selected]="'nakrashratha' == canteen.selectcanteen">Nakshratha</option>
+                                    <option value="Amritha" [selected]="'amritha' == canteen.selectcanteen">Amritha</option>
+                                    <option value="Uzhavan" [selected]="'uzhavan' == canteen.selectcanteen" >Uzhavan</option>
+                                    <option value="Ganesh" [selected]="'ganesha' == canteen.selectcanteen"></option>
+                                  </select>                               
+                            </div>                   
+                  </div>  
+                  <div [hidden]="!isupdated">
+                      <h4>canteen Detail Updated!</h4>
+                  </div>        
+                    
+            </div>
+            
+            <!-- Modal footer -->
+            <div class="modal-footer" >
+              <button type="submit" class="btn btn-success" [hidden]="isupdated">Update</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="changeisUpdate()">Close</button>
+            </div>
+            
+        
+          </div>
+        </div>
+     <!-- // </div> -->

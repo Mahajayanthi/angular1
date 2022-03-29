@@ -1,0 +1,161 @@
+<h3>Canteen Booking System</h3>
+<div class="form-group">
+  <label for="branch">Place</label>
+    <select class="form-control" formControlName="Place" data-toggle="tooltip" 
+          data-placement="right" title="selectcanteen">
+        <option value="null">--selectPlace--</option>
+      <option value="Tidel Park">Tidel Park</option>
+      <option value="Ramanujam IT Park">Ramanujam IT Park</option>
+      <option value="Ticel Park">Ticel Park</option>
+    </select>
+</div>
+<div class="form-group">
+  <label for="branch">CanteenNo</label>
+    <select class="form-control" formControlName="selectcanteen" data-toggle="tooltip" 
+          data-placement="right" title="selectcanteen">
+        <option value="null">--selectcanteenNo--</option>
+      <option value="1">1.Nakshratha</option>
+      <option value="2">2.Amritha</option>
+      <option value="3">3.Lakshmi</option>
+      <option value="4">4.Akshaya</option>
+      <option value="5">5. Aarogya</option>
+      <option value="6">6.Anbu</option>
+      <option value="7">7.Murugan</option>
+      <option value="8">8.Ganeshan</option>
+      <option value="9">9.Ambigai</option>
+      <option value="10">10.Punitha</option>
+    </select>
+</div>
+          
+          <div class="form-group">
+            <label for="name">MailId</label>
+            <input type="text" class="form-control" formControlName="canteenNo" 
+              data-toggle="tooltip" data-placement="right" title="Enter customer mailId ">
+              <div class="alert alert-danger" *ngIf = "(mailId.touched) && (mailId.invalid)" 
+              style="margin-top: 5px;">
+                <span *ngIf="mailId.errors.required"> customer mailId is Required</span>
+                  <span *ngIf = "mailId.errors.email"> 
+                      Invalid mailId Format 
+                  </span>                   
+              </div>
+        </div>
+  
+        <div class="form-group">
+          <!-- <label for="branch">Date</label>
+            <select class="form-control" formControlName="Time" data-toggle="tooltip" 
+                  data-placement="right" title="selectcanteen"> -->
+                  <label for="branch">   DateandTime  </label>
+                  <input type="datetime-local"  class="form-control" formcontrolName="Date"value="31-01-2022" min="31-01-2022" max="31-12-2042"data-toggle="tooltip" data-placement="right" title="Enter customer DateandTime Email">
+                  <div class="alert alert-danger" *ngIf = "(canteenNo.touched) && (canteenNo.invalid)" 
+                  style="margin-top: 5px;">
+                    <span *ngIf="DateandTime.errors.required"> customer DateandTime is Required</span>
+                      <span *ngIf = "DateandTime.errors.email"> 
+                          Invalid DateandTime Format 
+                      </span>                   
+                  </div>>
+                  <!-- <time time=" 12:00 to 11.00">children's day.</time> -->
+                
+
+
+                  <!-- <date> <dd>/<mm>/<yyy></date> -->
+                  
+                 <!-- <option value="1"> 'Date  | date:'yyyy-MM-dd''</option>
+                <option value="">  'short': equivalent to 'M/d/yy, h:mm a' (6/15/15, 9:03 AM).</option>
+                  'medium': equivalent to 'MMM d, y, h:mm:ss a' (Jun 15, 2015, 9:03:01 AM).
+                  'long': equivalent to 'MMMM d, y, h:mm:ss a z' (June 15, 2015 at 9:03:01 AM GMT+1).
+                  'full': equivalent to 'EEEE, MMMM d, y, h:mm:ss a zzzz' (Monday, June 15, 2015 at 9:03:01 AM GMT+01:00).
+                  'shortDate': equivalent to 'M/d/yy' (6/15/15).
+                  'mediumDate': equivalent to 'MMM d, y' (Jun 15, 2015).
+                  'longDate': equivalent to 'MMMM d, y' (June 15, 2015).
+                  'fullDate': equivalent to 'EEEE, MMMM d, y' (Monday, June 15, 2015).
+                  'shortTime': equivalent to 'h:mm a' (9:03 AM).
+                  'mediumTime': equivalent to 'h:mm:ss a' (9:03:01 AM).
+                  'longTime': equivalent to 'h:mm:ss a z' (9:03:01 AM GMT+1).
+                  'fullTime': equivalent to 'h:mm:ss a zzzz' (9:03:01 AM GMT+01:00).
+                    Invalid Date Format 
+                                   -->
+            <!-- </select> -->
+    
+                    <!-- <div class="form-group">
+                      <!-- <label for="branch">Time</label>
+                        <select class="form-control" formControlName="Time" data-toggle="tooltip" 
+                              data-placement="right" title="selectcanteen">
+                              <time>1.00</time> -->
+                              <!-- <label for="branch">  time  </label>
+
+                              <input type="time" class="form-control" formcontrolName="Time" value="12:30"min="12.00" max="11:00" data-toggle="tooltip" data-placement="right" title="Enter customer Time ">
+                              <div class="alert alert-danger" *ngIf = "(canteenNo.touched) && (canteenNo.invalid)" 
+                              style="margin-top: 5px;"><span *ngIf="Date.errors.required"> customer Time is Required</span>
+                              <span *ngIf = "Date.errors.email"> 
+                                  Invalid Time Format 
+                              </span>                   
+                          </div>> --> 
+
+                                      <!-- <time time=" 12:00 to 11.00"></time>  -->
+                
+                            <!-- <option value="null">--selectTime--</option>
+                          <option value="1">12.00</option>
+                          <option value="2">1.00</option>
+                          <option value="3">2.00</option>
+                          <option value="4">3.00</option>
+                          <option value="5">4.00</option>
+                          <option value="6">5.00</option>
+                          <option value="7">6.00</option>
+                          <option value="8">7.00</option>
+                          <option value="9">8.00</option>
+                          <option value="10">9.00</option>
+                          <option value="11">10.00</option>
+                          <option value="12">11.00</option>
+                        </select> -->
+                  <!-- </div>
+                </div> -->
+                <div class="form-group">
+                  <label for="name">PhoneNo</label>
+                  <input type="text" class="form-control" formControlName="PhoneNo" 
+                    data-toggle="tooltip" data-placement="right" title="Enter PhoneNo">
+                    <div class="alert alert-danger" *ngIf = "(PhoneNo) && (PhoneNo.invalid)" 
+                    style="margin-top: 5px;">
+                      <span *ngIf="PhoneNo.errors.required"> PhoneNo is Required</span>
+                        <span *ngIf = "PhoneNo.errors.minlength"> 
+                            Invalid Phoneno Format 
+                        </span>                   
+                    </div>
+                    
+          
+  
+          <div class="form-group">
+              <label for="branch">SelectCanteen</label>
+                <select class="form-control"formcontrolName="selectcanteen"  data-toggle="tooltip" 
+                      data-placement="right" title="selectcanteen">
+                    <option value="null">--selectcanteen--</option>
+                  <option value="1">Nakshratha</option>
+                  <option value="2">Amritha</option>
+                  <option value="3">Lakshmi</option>
+                  <option value="4">Akshaya</option>
+                  <option value="5">Aarogya</option>
+                  <option value="6">Anbu</option>
+                  <option value="7">Murugan</option>
+                  <option value="8">Ganeshan</option>
+                  <option value="9">Ambigai</option>
+                  <option value="10">Punitha</option>
+                </select>
+          </div>
+  
+          <button type="submit" class="btn btn-success">Submit</button>
+    
+  
+  <div class="col-sm-4"></div>
+</div>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+      <div [hidden]="submitted!">
+         <h4>canteen Added SuccessFully</h4>
+         <button (click)="addcanteenForm()" class='btn btn-primary'>Add More canteen</button>
+      </div>      
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+
+
+
